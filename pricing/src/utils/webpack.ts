@@ -1,0 +1,24 @@
+declare global {
+  interface Window {
+    getWebpackBundleRootPath: () => string
+  }
+}
+
+/**
+ * Function for resolving root path of webpack project.
+ * This make project can support CDN.
+ *
+ * Function name can't be change. It need to be name with webpack config.
+ * Ref: https://stackoverflow.com/a/64048787
+ */
+window.getWebpackBundleRootPath = function () {
+  const script = document.currentScript as HTMLScriptElement | null
+  let prefixPath = ''
+  if (script) {
+    const fullURL = new URL(script.src).href
+    prefixPath = fullURL.replace(/\/[^/]+?$/, '/')
+  }
+  return prefixPath
+}
+
+export {}
