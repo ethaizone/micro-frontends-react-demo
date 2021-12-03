@@ -1,0 +1,18 @@
+{
+  "name": "micro-frontends-react-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ethaizone/micro-frontends-react-demo.git",
+  "author": "EThaiZone <ethaizone@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "install:all": "for D in */; do yarn --cwd \"${D}\"; done",
+    "clear:cdn": "for D in http/cdn/*/; do rm -rf \"${D}\"; done",
+    "build:all": "for D in */; do yarn --cwd \"${D}\" build:cdn; done",
+    "start:prod": "yarn clear:cdn && yarn build:all",
+    "start:local": "yarn install:all && yarn concurrently -n \"main   ,home   ,pricing\" -c \"bgGreen.bold,black.bgYellow.bold,bgRed.bold\" \"yarn --cwd \"main\" start\" \"yarn --cwd \"home\" start\" \"yarn --cwd \"pricing\" start\""
+  },
+  "devDependencies": {
+    "concurrently": "^6.4.0"
+  }
+}

@@ -1,6 +1,8 @@
 # Example React Project for Micro-frontend.
 This is for demo of Module Federation. It created with goal as separate repos and can develop separatly.
 
+It's not finish properly yet.
+
 **Note:** Module Federation can't work with React Refresh so I disabled React Refresh by default. If you want to enable then change `REACT_REFRESH_ENABLED` in `webpack.config.js` to be true but Module Federation will be disable.
 
 ## Structure
@@ -11,13 +13,14 @@ This is for demo of Module Federation. It created with goal as separate repos an
 
 ## How to run?
 ### Running for local development.
-- Run `yarn` in every directories. It will install packages.
-- Run `yarn start` in `home` and `pricing` in each terminal session. It will start webpack server for it with TSC in watch mode. It will open web browser
+- Run `yarn`.
+- Run `yarn start:local`. It will run every things and open web browser.
+  - `main` will run on `localhost:8091`.
+  - `home` will run on `localhost:8092`.
+  - `pricing` will run on `localhost:8093`.
 
-
-### Running as example for production deployment.
-Goal is created production version and put files in `http/cdn`.
-
+### Running as production.
+Later or never but you should get idea. It's not hard to do by your self.
 
 ### For main/home/pricing
 - `yarn` install page.
@@ -26,7 +29,6 @@ Goal is created production version and put files in `http/cdn`.
   - If you run in `home` or `pricing` then it will open web browser automatically.
 - `yarn build` for create production build.
 - `yarn build:cdn` to create production build and put to `http`.
-
 
 ## Libraries.
 - React

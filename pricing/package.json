@@ -6,7 +6,7 @@
     "node": ">=14 <17"
   },
   "scripts": {
-    "start": "yarn concurrently -c \"bgBlue.bold,bgMagenta.bold\" \"npm:server\" \"npm:tsc:watch\"",
+    "start": "yarn concurrently -n \"server   ,tsc:watch\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm:server\" \"npm:tsc:watch\"",
     "server": "yarn webpack serve --env target=local",
     "build": "yarn webpack --env target=production",
     "build:cdn": "yarn build --output-path ../http/cdn/pricing",
