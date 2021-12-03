@@ -22,20 +22,18 @@ It's not finish properly yet.
 ### Running as production.
 Later or never but you should get idea. It's not hard to do by your self.
 
-### For main/home/pricing
+### Internal commands for main/home/pricing
 - `yarn` install page.
-- `yarn start` for starting dev server.
-  - If you run in `http`. Root page will display main page from
-  - If you run in `home` or `pricing` then it will open web browser automatically.
-- `yarn build` for create production build.
-- `yarn build:cdn` to create production build and put to `http`.
+- `yarn start` for starting dev server. It will open web browser automatically.
+- `yarn build` for create production build. Output is `dist`.
+- `yarn build:cdn` to create production build and put to `http/cdn/*`.
 
 ## Libraries.
 - React
 - Typescript
 - Webpack
   - Module Federation
-  - React Refresh (For HOT reload)
+  - ~~React Refresh (For HOT reload)~~ It can't work with Module Federation properly so now it's live reload.
 - Babel
 - Eslint
 - Prettier
