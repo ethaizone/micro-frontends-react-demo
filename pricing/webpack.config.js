@@ -123,19 +123,8 @@ function createConfig(environment) {
           exposes: {
             './Pricing': './src/Pricing',
           },
-          shared: ["react", "react-dom"],
-          // shared: {
-          //   ...packageDeps,
-          //   react: { singleton: true, eager: true, requiredVersion: packageDeps.react },
-          //   "react-dom": { singleton: true, eager: true, requiredVersion: packageDeps["react-dom"] },
-          // },
-          // shared: {
-          //   // ...packageDeps,
-          //   react: { requiredVersion: packageDeps.react },
-          //   "react-dom": { requiredVersion: packageDeps["react-dom"] },
-          // },
           shared: {
-            // ...packageDeps,
+            ...packageDeps,
             react: { singleton: true, requiredVersion: packageDeps.react },
             "react-dom": { singleton: true, requiredVersion: packageDeps["react-dom"] },
             "@emotion/react": { singleton: true, requiredVersion: packageDeps["@emotion/react"] },

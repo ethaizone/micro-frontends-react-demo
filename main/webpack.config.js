@@ -120,33 +120,17 @@ function createConfig(environment) {
         {
           name: 'main',
           filename: 'remoteEntry.js',
-          // library: { type: "var", name: "app1" },
-          // remotes: {
-          //   // home: 'home@http://localhost:8092/remoteEntry.js',
-          //   // home: 'home',
-          //   pricing: 'pricing@http://localhost:8093/remoteEntry.js',
-          // },
-          // shared: {
-          //   // ...packageDeps,
-          //   react: { import: 'react', singleton: true, requiredVersion: packageDeps.react },
-          //   "react-dom": { import: "react-dom", singleton: true, requiredVersion: packageDeps["react-dom"] },
-          // },
-          // shared: ["react", "react-dom"],
-          // shared: {
-          //   react: "react",
-          //   "react-dom": "react-dom",
-          // },
+          remotes: {
+            home: 'home@http://localhost:8092/remoteEntry.js',
+            pricing: 'pricing@http://localhost:8093/remoteEntry.js',
+          },
           shared: {
-            // ...packageDeps,
+            ...packageDeps,
             react: { singleton: true, requiredVersion: packageDeps.react },
             "react-dom": { singleton: true, requiredVersion: packageDeps["react-dom"] },
             "@emotion/react": { singleton: true, requiredVersion: packageDeps["@emotion/react"] },
             "react-helmet-async": { singleton: true, requiredVersion: packageDeps["react-helmet-async"] },
           },
-          // exposes: {
-          //   "react": "react",
-          //   "react-dom": "react-dom",
-          // },
         }
       ),
       new DefinePlugin({

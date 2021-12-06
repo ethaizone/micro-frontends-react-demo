@@ -8,7 +8,6 @@ import { CardActionArea, CardMedia } from '@mui/material'
 
 import './utils/webpack'
 import OpenImage from './assets/luke-southern-4kCGEB7Kt4k-unsplash.jpg'
-import func from './func'
 
 function HomeContent() {
   return (
@@ -39,11 +38,8 @@ function HomeContent() {
         >
           Just a home page. Now I'm very lazy to add mock up text.<br/><br/>
           I added some images to show how image work in Module federation.
-
-          asdjaklsdjalsdjk
         </Typography>
       </Container>
-      <button onClick={func}>Click me</button>
       {/* End hero unit */}
       <Container maxWidth="md" component="main">
         <Card>

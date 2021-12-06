@@ -1,11 +1,15 @@
 import React from 'react'
 
+// Create fake type for webpack require lib in remoteEntry.js
+type __webpack_require__ = {
+  init: (x: any) => Promise<void>
+  get: (x: any) => Promise<any>
+}
 declare global {
   function __webpack_init_sharing__(x: string): Promise<void>
   var __webpack_share_scopes__: any
   interface Window {
-    init: (x: any) => Promise<void>
-    get: (x: any) => Promise<any>
+    [x: string]: __webpack_require__
   }
 }
 

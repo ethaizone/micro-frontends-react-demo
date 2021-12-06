@@ -1,9 +1,16 @@
-import Lazy from '@/Lazy'
+// import Lazy from '@/Lazy'
 import * as React from 'react'
+const PricingRemote = React.lazy(
+  () => import('pricing/Pricing')
+)
 
 function Pricing() {
   return (
-    <Lazy url="http://localhost:8093/remoteEntry.js" scope="pricing" module="./Pricing" />
+    <React.Suspense fallback='Loading Pricing'>
+      <PricingRemote />
+    </React.Suspense>
+    // Another solution.
+    // <Lazy url="http://localhost:8093/remoteEntry.js" scope="pricing" module="./Pricing" />
   )
 }
 
